@@ -47,8 +47,38 @@ public class Main {
         }
 
         System.out.println("Задача номер 5");
+        byte childrenYears = 12;
+        if (childrenYears <= 5) {
+            System.out.println("Нельзя кататься на аттракционе.\n");
+        } else if (childrenYears > 5 && childrenYears < 14) {
+            System.out.println("Можно кататься на аттракционе в сопровождении .\n");
+        } else if (childrenYears >= 14) {
+            System.out.println("Можно кататься на аттракционе.\n");
+        }
 
+        System.out.println("Задача номер 6");
+        byte totalSeatsOnTheTrain = 102;
+        byte seats = 60;
+        byte standingPlaces = (byte) (totalSeatsOnTheTrain - seats);
+        byte ticketNumber = 103; //искомое значение//
+        if (ticketNumber <= seats) {
+            System.out.println("Есть сидячее место.\n");
+        } else if (ticketNumber > standingPlaces && ticketNumber <= 102) {
+            System.out.println("Есть стоячее место.\n");
+        } else if (ticketNumber > 102) {
+            System.out.println("Вагон заполнен.\n");
+        }
 
+        System.out.println("Задача номер 7");
+        int one = 5;
+        int two = 6;
+        int three = 9;
+        if (one >= two && one >= three) {
+            System.out.println("Наибольшее число " + one + ".\n");
+        } else if (two >= one && two >= three) {
+            System.out.println("Наибольшее число " + two + ".\n");
+        }else
+            System.out.println("Наибольшее число " + three + ".\n");
 
 
     }
