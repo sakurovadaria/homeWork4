@@ -27,23 +27,21 @@ public class Main {
             System.out.println("Если скорость " + speed + ", то придется заплатить штраф.\n");
 
         System.out.println("Задача номер 4");
-        byte humanAge = 22;
-        boolean kindergarten = humanAge > 2 && humanAge < 6;
-        if (kindergarten) {
+        byte humanAge = 1;
+        if (humanAge >= 2 && humanAge <= 6) {
             System.out.println("Если возраст человека равен " + humanAge +
                     ", то ему нужно ходить в детский сад.\n");
-        } else {
-            boolean school = humanAge >= 7 && humanAge <= 17;
-            if (school) {
+        } else if (humanAge >= 7 && humanAge <= 17) {
                 System.out.println("Если возраст человека равен " + humanAge +
                         ", то ему нужно ходить в школу.\n");
-            } else if (humanAge >= 18 && humanAge <= 24) {
+        } else if (humanAge >= 18 && humanAge <= 24) {
                 System.out.println("Если возраст человека равен " + humanAge +
                         ", то ему нужно ходить в университет.\n");
-            } else if (humanAge > 24) {
+        } else if (humanAge > 24) {
                 System.out.println("Если возраст человека равен " + humanAge +
                         ", то ему нужно ходить на работу.\n");
-            }
+        } else {
+            System.out.println("Вы ввели некорректные данные.\n");
         }
 
         System.out.println("Задача номер 5");
@@ -57,15 +55,16 @@ public class Main {
         }
 
         System.out.println("Задача номер 6");
+        byte ticketNumber = 52; //искомое значение//
         byte totalSeatsOnTheTrain = 102;
         byte seats = 60;
-        byte standingPlaces = (byte) (totalSeatsOnTheTrain - seats);
-        byte ticketNumber = 103; //искомое значение//
         if (ticketNumber <= seats) {
-            System.out.println("Есть сидячее место.\n");
-        } else if (ticketNumber > standingPlaces && ticketNumber <= 102) {
-            System.out.println("Есть стоячее место.\n");
-        } else if (ticketNumber > 102) {
+            byte numberSeats = (byte) (seats - ticketNumber);
+            System.out.println("Есть сидячее место. Всего осталось мест "  + numberSeats + ".\n");
+        } else if (ticketNumber > seats && ticketNumber <= totalSeatsOnTheTrain) {
+            byte number = (byte) (ticketNumber - seats);
+            System.out.println("Есть стоячие места. Всего осталось мест " + number +  ".\n");
+        } else if (ticketNumber > totalSeatsOnTheTrain) {
             System.out.println("Вагон заполнен.\n");
         }
 
@@ -77,8 +76,9 @@ public class Main {
             System.out.println("Наибольшее число " + one + ".\n");
         } else if (two >= one && two >= three) {
             System.out.println("Наибольшее число " + two + ".\n");
-        }else
+        } else {
             System.out.println("Наибольшее число " + three + ".\n");
+        }
 
 
     }
